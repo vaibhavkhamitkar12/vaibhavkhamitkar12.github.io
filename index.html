@@ -1,0 +1,418 @@
+<html>
+	<head>
+		<script>
+			
+		window.onload = function () {
+					//1 chart
+					var chart = {
+					animationEnabled: true,
+					theme: "light2",
+					title:{
+						text: "Recovered"
+					},
+					axisX:{
+						valueFormatString: "DD MMM"
+					},
+					axisY: {
+						title: "Number of Patients",
+						suffix: "",
+						minimum: 0
+					},
+					toolTip:{
+						shared:true
+					},  
+					legend:{
+						cursor:"pointer",
+						verticalAlign: "top",
+						horizontalAlign: "left",
+						dockInsidePlotArea: true,
+						itemclick: toogleDataSeries
+					},
+					data: [{
+						type: "area",
+						showInLegend: true,
+						name: "Recovered",
+						lineDashType: "line",
+						color: "green",
+						yValueFormatString: "#,##0",
+						dataPoints: [
+
+							{ x: new Date(2020, 4, 20), y: 170 },
+							{ x: new Date(2020, 4, 21), y: 210 },
+							{ x: new Date(2020, 4, 22), y: 224 },
+							{ x: new Date(2020, 4, 23), y: 249 },
+							{ x: new Date(2020, 4, 24), y: 254 },
+							{ x: new Date(2020, 4, 25), y: 277 },
+							{ x: new Date(2020, 4, 26), y: 298 },
+							{ x: new Date(2020, 4, 27), y: 311 },
+							{ x: new Date(2020, 4, 28), y: 321 },
+							{ x: new Date(2020, 4, 29), y: 351 },
+							{ x: new Date(2020, 4, 30), y: 380 },
+							{ x: new Date(2020, 4, 31), y: 394 },
+							{ x: new Date(2020, 5, 1), y: 443 },
+							{ x: new Date(2020, 5, 2), y: 447 },
+							{ x: new Date(2020, 5, 3), y: 469 }
+				
+						]
+					}]
+				};
+				$("#charttry").CanvasJSChart(chart);
+				
+				function toogleDataSeries(e){
+					if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+						e.dataSeries.visible = false;
+					} else{
+						e.dataSeries.visible = true;
+					}
+					e.chart.render();
+				}
+					//2 chart
+					var options = {
+						animationEnabled: true,
+					theme: "light2",
+					title:{
+						text: "CORONA"
+					},
+					axisX:{
+						valueFormatString: "DD MMM"
+					},
+					axisY: {
+						title: "Number of Patients",
+						suffix: "",
+						minimum: 0
+					},
+					toolTip:{
+						shared:true
+					},  
+					legend:{
+						cursor:"pointer",
+						verticalAlign: "top",
+						horizontalAlign: "left",
+						dockInsidePlotArea: true,
+						itemclick: toogleDataSeries
+					},
+					data: [{
+						type: "area",
+						showInLegend: true,
+						name: "CORONA",
+						markerType: "circle",
+						xValueFormatString: "DD MMM, YYYY",
+						color: "crimson",
+						yValueFormatString: "#,##0",
+						dataPoints: [
+
+							{ x: new Date(2020, 4, 20), y: 470 },
+							{ x: new Date(2020, 4, 21), y: 488 },
+							{ x: new Date(2020, 4, 22), y: 516 },
+							{ x: new Date(2020, 4, 23), y: 565 },
+							{ x: new Date(2020, 4, 24), y: 583 },
+							{ x: new Date(2020, 4, 25), y: 608 },
+							{ x: new Date(2020, 4, 26), y: 632 },
+							{ x: new Date(2020, 4, 27), y: 667 },
+							{ x: new Date(2020, 4, 28), y: 748 },
+							{ x: new Date(2020, 4, 29), y: 851 },
+							{ x: new Date(2020, 4, 30), y: 865 },
+							{ x: new Date(2020, 4, 31), y: 949 },
+							{ x: new Date(2020, 5, 1), y: 992 },
+							{ x: new Date(2020, 5, 2), y: 1040 },
+							{ x: new Date(2020, 5, 3), y: 1080 }
+
+						]
+					}]
+				};
+				$("#chartContainer").CanvasJSChart(options);
+				
+				function toogleDataSeries(e){
+					if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+						e.dataSeries.visible = false;
+					} else{
+						e.dataSeries.visible = true;
+					}
+					e.chart.render();
+				}
+			/*	var chart = new CanvasJS.Chart("chartpie", {
+	exportEnabled: true,
+	animationEnabled: true,
+	title:{
+		text: "Disease affected Area"
+	},
+	legend:{
+		cursor: "pointer",
+		itemclick: explodePie
+	},
+	data: [{
+		type: "pie",
+		showInLegend: true,
+		toolTipContent: "{name}: <strong>{y}%</strong>",
+		indexLabel: "{name} - {y}%",
+		dataPoints: [
+			{ y: 11, name: "Pachha Peth,Civil Chowk,Kumta Naka", exploded: true },
+			{ y: 12, name: "Bapuji ,Kurban Hussian,Indira Nagar" },
+			{ y: 5, name: "Joshi galli,Raviwar,Bhadrawati peth" },
+			{ y: 7, name: "Shastri nagar,Lashkar" },
+			{ y: 8, name: "Shaniwar peth,Shanti and Siddheshwar nagar,Nayi Zindagi,Ambedkar Nagar" },
+			{ y: 1, name: "Sangola" },
+			{ y: 1, name: "Mohol" },
+			{ y: 2, name: "Padma Nagar,MIDC" },
+			{ y: 3, name: "Railway station ,Big bazar ,Siddharth Housing society" }
+		]
+	}]
+});
+chart.render();*/
+
+var death = new CanvasJS.Chart("chartdeath", {
+	animationEnabled: true,
+	theme: "light2",
+	title:{
+		text: "Death"
+	},
+	axisX:{
+		valueFormatString: "DD MMM",
+		crosshair: {
+			enabled: true,
+			snapToDataPoint: true
+		}
+	},
+	axisY: {
+		title: "Number of patients",
+		crosshair: {
+			enabled: true
+		}
+	},
+	toolTip:{
+		shared:true
+	},  
+	legend:{
+		cursor:"pointer",
+		verticalAlign: "top",
+		horizontalAlign: "left", 
+		dockInsidePlotArea: true,
+		itemclick: toogleDataSeries
+	},
+	data: [{
+		type: "area",
+		showInLegend: true,
+		name: "Died",
+		xValueFormatString: "DD MMM, YYYY",
+		color: "grey",
+		dataPoints: [
+
+							{ x: new Date(2020, 4, 20), y: 33 },
+							{ x: new Date(2020, 4, 21), y: 34 },
+							{ x: new Date(2020, 4, 22), y: 40 },
+							{ x: new Date(2020, 4, 23), y: 46 },
+							{ x: new Date(2020, 4, 24), y: 51 },
+							{ x: new Date(2020, 4, 25), y: 58 },
+							{ x: new Date(2020, 4, 26), y: 62 },
+							{ x: new Date(2020, 4, 27), y: 66 },
+							{ x: new Date(2020, 4, 28), y: 72 },
+							{ x: new Date(2020, 4, 29), y: 75 },
+							{ x: new Date(2020, 4, 30), y: 83 },
+							{ x: new Date(2020, 4, 31), y: 88 },
+							{ x: new Date(2020, 5, 1), y: 89 },
+							{ x: new Date(2020, 5, 2), y: 90 },
+							{ x: new Date(2020, 5, 3), y: 94 }			]
+	}]
+});
+death.render();
+
+function toogleDataSeries(e){
+	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+		e.dataSeries.visible = false;
+	} else{
+		e.dataSeries.visible = true;
+	}
+	death.render();
+}
+
+}
+
+function explodePie (e) {
+	if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
+		e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+	} else {
+		e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+	}
+	e.chart.render();
+
+}
+</script>			
+		<title>MH13covidtracker</title>
+		<meta charset="utf-8" />
+		<meta name="description" content="Track the covid patients online.Stay Home Stay Safe. Covid 19 live update" />
+		<meta name="keywords" content="HTML , CSS , Javascript" />
+		<meta name="author" content="Vaibhav Khamitkar" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets\css\main.css" />
+</head>
+	<body class="landing">
+		<!-- Header -->
+			<header id="header" class="alt">
+				<h1><strong><a href="index.html">CORONA TRACKER</a></strong> by Vaibhav Khamitkar</h1>
+			<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li> 
+						<li><a href="https://solapur.gov.in/en/corona/">Gov. Info</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+	
+		<!-- Banner -->
+			<section id="banner">
+				<h2>Lets Fight Corona Virus</h2>
+				<h7>If you fear you have contracted a Disease dont let false shame Destroy your Health and Happiness <br> Consult the Doctors.</h7>
+				<ul class="actions">
+					<li><a href="#menu" class="button special big">Menu</a></li>
+				</ul>
+			</section>
+			<!-- One -->
+			<section id="one" class="wrapper style1">
+					<div class="pagefit">
+									<header>
+										<center><img class="pagefit" src="images\solapur map.png">
+										<br><h4>Solapur</h4>
+									<p>Here are the stats</p></center>
+									</header>
+					</div>	
+					<table class="colinfo">
+						<tr>
+							<th class="colin" style="color: crimson;">Confirmed</th>
+							<th class="colin" style="color: darkblue;">&nbsp&nbsp&nbspActive</th>
+							<th class="colin" style="color: lightgreen;">Recovered</th>
+							<th class="colin" style="color: darkgrey;">Deacesed</th>
+						</tr>
+						<tr>
+							<center><td class="colin" style="color: crimson; font-family: Arial, Helvetica, sans-serif;"><b style="color: crimson; font-family: Arial, Helvetica, sans-serif;">1080</b><br>[+40]<br></td>
+							<td class="colin" style="color: darkblue; font-family: Arial, Helvetica, sans-serif;"><b style="color: darkblue; font-family: Arial, Helvetica, sans-serif;">517</b><br>[+40]</td>
+							<td class="colin" style="color: green; font-family: Arial, Helvetica, sans-serif;"><b style="color: green; font-family: Arial, Helvetica, sans-serif;">&nbsp469</b><br>[+22]</td>
+							<td class="colin" style="color: darkgrey; font-family: Arial, Helvetica, sans-serif;"><b style="color: darkgrey; font-family: Arial, Helvetica, sans-serif;">94</b><br>[+4]</td>
+						</tr>
+					</table>
+			</section>
+			<section>
+				<!-- hitwebcounter Code START -->
+<a href="https://www.hitwebcounter.com" target="_blank">
+	<img src="https://hitwebcounter.com/counter/counter.php?page=7444288&style=0024&nbdigits=5&type=page&initCount=0" title="Web Counter" Alt="counter free"   border="0" >
+	</a>    
+			</section>			
+			<section>
+			<section id="one" class="wrapper style1">
+					<div class="pagefit">
+								<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+					</div>
+			</section>
+			<section id="one" class="wrapper style1">
+					<div class="pagefit">
+								<div id="charttry" style="height: 370px; width: 100%;"></div>
+					</div>
+			</section>
+			<section id="one" class="wrapper style1">
+					<div class="pagefit">
+								<div id="chartdeath" style="height: 370px; width: 100%;"></div>
+					</div>
+			</section>
+		<!--	<section id="one" class="wrapper style1">
+					<div class="pagefit">
+							<center><div id="chartpie" style="height: 370px; width: 90%;"></div></center>
+					</div>
+			</section>
+		-->
+				
+				
+			<!-- Three -->
+				<section id="three" class="wrapper style1">
+					<div class="container">
+						<header class="major special">
+							<center><h2>Everyone Should</h2>
+							<p>Be Aware</p></center>
+						</header>
+						<div class="feature-grid">
+							<div class="feature">
+								<div class="image rounded"><img src="images/cover_face.jpg" alt="" /></div>
+								<div class="content">
+									<header>
+										<h4>Cover your mouth and nose</h4>
+										<p>Step 1</p>
+									</header>
+									<p>You could spread COVID-19 to others even if you do not feel sick.The cloth face cover is meant to protect other people in case you are infected.</p>
+								</div>
+							</div>
+							<div class="feature">
+								<div class="image rounded"><img src="images/wash_hand.jpg" alt="" /></div>
+								<div class="content">
+									<header>
+										<h4>Clean your hands often</h4>
+										<p>Step 2</p>
+									</header>
+									<p>Avoid touching your eyes, nose, and mouth with unwashed hands.Wash your hands often with soap and water for at least 20 seconds especially after you have been in a public place, or after blowing your nose, coughing, or sneezing.</p>
+								</div>
+							</div>
+							<div class="feature">
+								<div class="image rounded"><img src="images/clean.jpg" alt="" /></div>
+								<div class="content">
+									<header>
+										<h4>Clean and disinfect</h4>
+										<p>Step 3</p>
+									</header>
+									<p>Clean AND disinfect frequently touched surfaces daily. This includes tables, doorknobs, light switches, countertops, handles, desks, phones, keyboards, toilets, faucets, and sinks.If surfaces are dirty, clean them. Use detergent or soap and water prior to disinfection.</p>
+								</div>
+							</div>
+							<div class="feature">
+								<div class="image rounded"><img src="images/close_contact.jpg" alt="" /></div>
+								<div class="content">
+									<header>
+										<h4>Avoid close contact</h4>
+										<p>Step 4</p>
+									</header>
+									<p>Avoid close contact with people who are sick.Stay home as much as possible.Put distance between yourself and other people.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Four -->
+				<section id="four" class="wrapper style3 special">
+					<div class="container">
+						<header class="major">
+							<h2>Donate Now</h2>
+							<p>Your contibution can transform lives</p>
+						</header>
+						<ul class="actions">
+							<li><a href="https://pmnrf.gov.in/en/online-donation" class="button special big">link to official site</a></li>
+						</ul>
+					</div>
+				</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a style ="color: #3b5998" href="https://www.facebook.com/vaibhavkhamitkar12" class="icon fa-facebook"></a></li>
+						<li><a style ="color:  #00acee" href="https://twitter.com/boy_with_hoodie" class="icon fa-twitter" ></a></li>
+						<li><a style ="color:   #E1306C" href="https://www.instagram.com/vaibhavkhamitkar12" class="icon fa-instagram"></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Vaibhav Khamitkar</li>
+					<b>	<li>Note:<a style="color:black">***All the Data is collected from online resources***</a></li> </b>
+						<li><!-- hitwebcounter Code START -->
+<a href="https://www.hitwebcounter.com" target="_blank">
+<img src="https://hitwebcounter.com/counter/counter.php?page=7536824&style=0032&nbdigits=6&type=page&initCount=0" title="Web Counter" Alt="counter free"   border="0" >
+</a>                                    
+                                                                    
+                                        	</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+			<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+	</body>
+</html>
