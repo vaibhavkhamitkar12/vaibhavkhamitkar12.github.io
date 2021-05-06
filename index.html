@@ -9,6 +9,10 @@
 					ot_map.put("ot_PMfunds","true");
 					ot_log_state(console.log("Saved to Opentracker"));
 				}
+				else{
+					ot_map.put("ot_PMfunds","false");
+					ot_log_state(console.log("Saved to Opentracker"));
+				}
 			}
 			
 			
@@ -391,8 +395,8 @@ function explodePie (e) {
 							<h2>Donate Now</h2>
 							<p>Your contibution can transform lives</p>
 						</header>
-						<ul class="actions" class="button special big">
-							<li><a href="https://pmnrf.gov.in/en/online-donation" onclick="trackDownloadButton()";>link to official site</a></li>
+						<ul class="actions" >
+							<li><a href="https://pmnrf.gov.in/en/online-donation" onclick="trackDownloadButton()"; class="button special big">link to official site</a></li>
 						</ul>
 					</div>
 				</section>
