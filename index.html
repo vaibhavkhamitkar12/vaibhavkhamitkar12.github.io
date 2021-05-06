@@ -1,6 +1,15 @@
 <html>
 	<head>
 		<script>
+			function trackDownloadButton()
+			{
+				a=1;
+				if (a==1)
+				{
+					ot_map.put("ot_PMfunds","true");
+					ot_log_state(console.log("Saved to Opentracker"));
+				}
+			}
 			
 		window.onload = function () {
 					//1 chart
@@ -382,7 +391,7 @@ function explodePie (e) {
 							<p>Your contibution can transform lives</p>
 						</header>
 						<ul class="actions">
-							<li><a href="https://pmnrf.gov.in/en/online-donation" class="button special big">link to official site</a></li>
+							<li><a href="https://pmnrf.gov.in/en/online-donation" onclick="trackDownloadButton()";class="button special big">link to official site</a></li>
 						</ul>
 					</div>
 				</section>
