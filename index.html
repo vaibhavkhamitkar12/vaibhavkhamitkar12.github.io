@@ -10,6 +10,33 @@
 					ot_log_state(console.log("Saved to Opentracker"));
 				}
 			}
+			function trackDownloadButtonf()
+			{
+				a=1;
+				if (a==1)
+				{
+					ot_map.put("Visited_Facebook","true");
+					ot_log_state(console.log("Saved to Opentracker"));
+				}
+			}
+			function trackDownloadButtont()
+			{
+				a=1;
+				if (a==1)
+				{
+					ot_map.put("Visited_Twitter","true");
+					ot_log_state(console.log("Saved to Opentracker"));
+				}
+			}
+			function trackDownloadButtoni()
+			{
+				a=1;
+				if (a==1)
+				{
+					ot_map.put("Visited_Instagram","true");
+					ot_log_state(console.log("Saved to Opentracker"));
+				}
+			}
 			
 		window.onload = function () {
 					//1 chart
@@ -400,9 +427,9 @@ function explodePie (e) {
 			<footer id="footer">
 				<div class="container">
 					<ul class="icons">
-						<li><a style ="color: #3b5998" href="https://www.facebook.com/vaibhavkhamitkar12" class="icon fa-facebook"></a></li>
-						<li><a style ="color:  #00acee" href="https://twitter.com/boy_with_hoodie" class="icon fa-twitter" ></a></li>
-						<li><a style ="color:   #E1306C" href="https://www.instagram.com/vaibhavkhamitkar12" class="icon fa-instagram"></a></li>
+						<li><a style ="color: #3b5998" href="https://www.facebook.com/vaibhavkhamitkar12" onclick="trackDownloadButtonf()";class="icon fa-facebook"></a></li>
+						<li><a style ="color:  #00acee" href="https://twitter.com/boy_with_hoodie" onclick="trackDownloadButtont()";class="icon fa-twitter" ></a></li>
+						<li><a style ="color:   #E1306C" href="https://www.instagram.com/vaibhavkhamitkar12" onclick="trackDownloadButtoni()";class="icon fa-instagram"></a></li>
 					</ul>
 					<ul class="copyright">
 						<li>&copy; Vaibhav Khamitkar</li>
